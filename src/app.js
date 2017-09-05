@@ -68,6 +68,18 @@ class App extends Component {
     });
   }
 
+  unloadTodoPlugin() {
+    let storeStore = window.p7hostGlobal.storeStore;
+    let pluginStore = storeStore.getStore('plugin-store');
+    pluginStore.removePlugin('test-plugin');
+
+    dynamicJsCssLoader.unloadExternalJsCss({
+      key: 'todo-component',
+      jsBundle: {
+        path: 'dist/bundle.js'
+      }
+    });
+  }
   render() {
     return (
       <div className="App">
@@ -77,8 +89,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={() => {this.withTodoRoutes()}}>With Todo Routes!</button>
-        <button onClick={() => {this.noTodoRoutes()}}>No Todo Routes!</button>
+        <button onClick={() => {this.unloadTodoPlugin()}}>Unload Todo Plugin!</button>
         <button onClick={() => {this.loadTodoPlugin()}}>Load Todo Plugin!</button>
       </div>
     );

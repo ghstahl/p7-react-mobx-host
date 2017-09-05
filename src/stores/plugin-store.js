@@ -18,8 +18,8 @@ class PluginStore {
         this.catchAllRoute = route;
     }
 
-    addPlugin(name, plugin) {
-        this.plugins[name] = plugin;
+    _rebuildAndPublishRoutes() {
+        routerConfigStore.clearRoutes();
         routerConfigStore.setCatchAllRoute(this.catchAllRoute);
         for (var key in this.plugins) {
             let value = this.plugins[key];
@@ -27,13 +27,18 @@ class PluginStore {
             console.log(value);
         }
 
-       
+
         routerConfigStore.setRootComponent(this.rootComponent);
         routerConfigStore.publishFinalRouteTable();
+    }
+    addPlugin(name, plugin) {
+        this.plugins[name] = plugin;
+        this._rebuildAndPublishRoutes();
     }
 
     removePlugin(name) {
         delete this.plugins[name];
+        this._rebuildAndPublishRoutes();
     }
 
     getPlugin(name) {

@@ -31740,7 +31740,7 @@ let App = class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     __WEBPACK_IMPORTED_MODULE_2__utils_dynamic_jscss_loader__["a" /* default */].loadExternalJsCss({
       key: 'todo-component',
       jsBundle: {
-        path: 'dist/bundle.js'
+        path: 'https://rawgit.com/ghstahl/p7-react-mobx-host/master/dist/dist/bundle.js'
       }
     });
   }
@@ -31753,7 +31753,7 @@ let App = class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     __WEBPACK_IMPORTED_MODULE_2__utils_dynamic_jscss_loader__["a" /* default */].unloadExternalJsCss({
       key: 'todo-component',
       jsBundle: {
-        path: 'dist/bundle.js'
+        path: 'https://rawgit.com/ghstahl/p7-react-mobx-host/master/dist/dist/bundle.js'
       }
     });
   }
